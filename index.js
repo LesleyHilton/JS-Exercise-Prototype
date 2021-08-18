@@ -39,24 +39,26 @@ Airplane.prototype.land = function () {
         + It should return a string with `name` and `age`. Example: "Mary, 50"
 */
 
-function Person() {
-  
-}
-
-function Airplane(name) {
+function Person(name, age){
   this.name = name;
-  this.isFlying = false;
+  this.age = age;
+  this.stomach = [];
 }
-Airplane.prototype.takeOff = function () {
-  this.isFlying = true;
-};
-Airplane.prototype.land = function () {
-  this.isFlying = false;
-};
+
+Person.prototype.eat = function(edible){
+  if(this.stomach.length < 10){
+    this.stomach.push(edible);
+  }
+}
+
+Person.prototype.poop = function(){
+  this.stomach = [];
+  }
 
 
-
-
+Person.prototype.toString = function(name, age){
+  return `${name}, ${age}`;
+}
 
 
 
@@ -74,20 +76,23 @@ Airplane.prototype.land = function () {
         + The `drive` method should return a string "I ran out of fuel at x miles!" x being `odometer`.
 */
 
-function Car() {
-  
+function Car(model, milesPerGallon) {
+  this.tank = 0;
+  this.odometer = 0;
 }
 
-function Airplane(name) {
-  this.name = name;
-  this.isFlying = false;
-}
-Airplane.prototype.takeOff = function () {
-  this.isFlying = true;
-};
-Airplane.prototype.land = function () {
-  this.isFlying = false;
-};
+Car.prototype.fill(gallons);
+
+// function Airplane(name) {
+//   this.name = name;
+//   this.isFlying = false;
+// }
+// Airplane.prototype.takeOff = function () {
+//   this.isFlying = true;
+// };
+// Airplane.prototype.land = function () {
+//   this.isFlying = false;
+// };
 
 /*
   TASK 3
